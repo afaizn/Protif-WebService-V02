@@ -20,17 +20,22 @@ Ikhawanul Hakim / 18210026
 		        <li data-value ="buku" onclick="gantiKategori('buku')"><a href="#">Buku</a></li>
 		        <li data-value ="mahasiswa" onclick="gantiKategori('mahasiswa')"><a href="#">Mahasiswa</a></li>
 		        <li data-value ="makanan" onclick="gantiKategori('makanan')"><a href="#" >Makanan</a></li>
+		        <li><a href="wsteman.php" >WS Andi</a></li>
+		        <li><a href="wshendy.php" >WS Hendy</a></li>
 		    </ul>
 		</div>
 	<div id="content">
 		<div id="textbuku">
 			<h1> Hey Dude, Looking for Something ? </h1>
+			<h3 ><a href="converter/mencari/daftarbuku.xml" style="color:white">Book List</a></h3>
 		</div>
 		<div id="textmahasiswa" style="display:none">
 			<h1> Hey Dude, Looking for Someone ? </h1>
+			<h3 ><a href="access/BernadetteVina/myxmlfile.xml" style="color:white">Student List</a></h3>
 		</div>
 		<div id="textmakanan" style="display:none">
 			<h1> Hey Dude, Looking for Food ? </h1>
+			<h3 ><a href="access/BintangAdinandra/menu.xml" style="color:white">Menu</a></h3>
 		</div>
 		<form class="pure-form" action="javascript:search()">
 	    	<input id="keyword" type="text" placeholder="search here" class="pure-input-rounded" required>
@@ -64,8 +69,10 @@ Ikhawanul Hakim / 18210026
 	};
 
 	function search() {
+		var loc = window.location.pathname;
+		var dir = loc.substring(0, loc.lastIndexOf('/'));
 		var input = document.getElementById("keyword").value;
-		window.location = "http://localhost/protif/tampilkan.php?keyword=" + input + "&kategori=" + kategori;
+		window.location = dir + "/tampilkan.php?keyword=" + input + "&kategori=" + kategori;
 	};
 
 
